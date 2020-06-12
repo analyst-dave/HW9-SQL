@@ -57,3 +57,8 @@ group by last_name
 order by last_name desc;
 
 
+-- April's Foolsday lol
+select dm.dept_name, emp.emp_no, emp.last_name, emp.first_name
+from (select d.dept_no, d.dept_name, e.emp_no from departments d inner join dept_emp e on d.dept_no = e.dept_no ) dm
+INNER JOIN employees emp ON emp.emp_no = dm.emp_no
+where emp.emp_no = 499942;
